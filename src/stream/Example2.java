@@ -16,6 +16,7 @@ public class Example2 {
     public static void main(String[] args) {
 
         List<Dish> menu = GenDataListUtil.getMenuList();
+        // 筛选出卡路里小于400的菜名
         List<String> lowCaloricDishesName =
                 menu.stream()
                         .filter(d -> d.getCalories() < 400)
