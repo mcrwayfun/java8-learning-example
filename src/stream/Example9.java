@@ -14,9 +14,13 @@ import static java.util.stream.Collectors.toList;
 public class Example9 {
 
     public static void main(String[] args) {
-        List<String> words = Arrays.asList("Java 8", "Lambdas", "In", "Action");
+        List<String> words = Arrays.asList("Java 8", null,"Lambdas", "In", "Action");
         List<Character> wordLengths = words.stream()
-                .map(word -> word.charAt(0))
+                .map(word -> {
+                    if(word != null)
+                    return word.charAt(0);
+                    return 'a';
+                })
                 .collect(toList());
         System.out.println(wordLengths);
     }

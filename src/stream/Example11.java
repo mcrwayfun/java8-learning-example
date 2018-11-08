@@ -14,7 +14,7 @@ public class Example11 {
     public static void main(String[] args) {
         List<String> words = Arrays.asList("hello", "world");
         if (words.stream()
-                .anyMatch(word -> word.contains("o")))
+                .allMatch(word -> word.contains("o")))
             System.out.println("all match");
     }
 }
